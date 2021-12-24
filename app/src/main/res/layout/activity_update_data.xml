@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".update_data"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGISTRATION"
+                android:layout_marginTop="10dp"
+                android:padding="15dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <!--Nama Lengkap-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            android:text="Nama Lengkap"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etNamaUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:padding="15dp"
+            android:hint="Masukkan Nama Lengkap"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@id/etEmail"/>
+
+        <!--Email-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Email"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etEmailUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:padding="15dp"
+            android:hint="Masukkan Email"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/etNotelp"/>
+
+        <!--No Telepon -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="No Telepon"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etNotelpUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:padding="15dp"
+            android:hint="Masukkan No Telepon"
+            android:inputType="number"
+            android:nextFocusDown="@id/etAlamat"/>
+
+        <!--Alamat-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Alamat"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etAlamatUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:padding="15dp"
+            android:hint="Masukkan Alamat"
+            android:inputType="text"/>
+
+        <!--Seekbar Umur-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Umur"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold"/>
+
+        <SeekBar
+            android:id="@+id/sbUmurUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:min="10"
+            android:max="55"
+            android:progress="25"/>
+
+        <TextView
+            android:id="@+id/tvsbUmurUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="25 Tahun"
+            android:textSize="15dp"/>
+
+        <!--Jenis Kelamin-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Kelamin"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgJeniskelaminUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:checkedButton="@id/pria">
+
+            <RadioButton
+                android:id="@+id/priaUp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pria"/>
+
+            <RadioButton
+                android:id="@+id/wanitaUp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wanita"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Status Pekerjaan"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb1Up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:text="Pelajar"/>
+
+            <CheckBox
+                android:id="@+id/cb2Up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="7dp"
+                android:text="Bekerja"/>
+
+            <CheckBox
+                android:id="@+id/cb3Up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="7dp"
+                android:text="Tidak bekerja"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnupdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:padding="15dp"
+                android:text="Update"></Button>
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+
+
+
