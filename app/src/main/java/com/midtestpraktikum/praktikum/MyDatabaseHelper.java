@@ -25,7 +25,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_JK = "jk";
     private static final String COLUMN_STATUS = "status";
 
-    public MyDatabaseHelper(@Nullable Context context) {
+    MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -78,5 +78,34 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return  cursor;
+    }
+
+    void  updateData(String row_id, String nama, String email, String notelp, String alamat, String umur, String gender, String status){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NAMA, nama);
+        cv.put(COLUMN_EMAIL, email);
+        cv.put(COLUMN_NOTELP, notelp);
+        cv.put(COLUMN_ALAMAT, alamat);
+        cv.put(COLUMN_UMUR, umur);
+        cv.put(COLUMN_JK, gender);
+        cv.put(COLUMN_STATUS, status);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[] {row_id});
+        if(result == -1){
+            Toast.makeText(context, "Data Gagal Update", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Data Berhasil Update", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[] {row_id});
+        if (result == -1){
+            Toast.makeText(context, "Gagal Mengahapus Data", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Berhasil Menghapus Data", Toast.LENGTH_SHORT).show();
+        }
     }
 }

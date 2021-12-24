@@ -19,6 +19,7 @@
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".update_data"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".tambah_data"

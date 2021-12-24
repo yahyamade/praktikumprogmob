@@ -1,5 +1,6 @@
 package com.midtestpraktikum.praktikum;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton btn_tambah;
 
     MyDatabaseHelper myDB;
-    ArrayList<String> mhs_id, mhs_nama, mhs_email;
+    ArrayList<String> mhs_id, mhs_nama, mhs_email, mhsnotelp, mhsalamat, mhsumur, mhsgender, mhsstatus;
     CustomAdapter customAdapter;
 
     @Override
@@ -41,12 +42,25 @@ public class MainActivity extends AppCompatActivity {
         mhs_id = new ArrayList<>();
         mhs_nama = new ArrayList<>();
         mhs_email = new ArrayList<>();
+        mhsnotelp = new ArrayList<>();
+        mhsalamat = new ArrayList<>();
+        mhsumur = new ArrayList<>();
+        mhsgender = new ArrayList<>();
+        mhsstatus = new ArrayList<>();
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(MainActivity.this, mhs_id, mhs_nama, mhs_email);
+        customAdapter = new CustomAdapter(MainActivity.this,this, mhs_id, mhs_nama, mhs_email, mhsnotelp, mhsalamat, mhsumur, mhsgender, mhsstatus);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1){
+            recreate();
+        }
     }
 
     void storeDataInArrays(){
@@ -58,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 mhs_id.add(cursor.getString(0));
                 mhs_nama.add(cursor.getString(1));
                 mhs_email.add(cursor.getString(2));
+                mhsnotelp.add(cursor.getString(3));
+                mhsalamat.add(cursor.getString(4));
+                mhsumur.add(cursor.getString(5));
+                mhsgender.add(cursor.getString(6));
+                mhsstatus.add(cursor.getString(7));
             }
         }
     }

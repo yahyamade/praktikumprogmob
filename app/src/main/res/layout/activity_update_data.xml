@@ -214,11 +214,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="60dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginRight="15dp"
                 android:padding="15dp"
                 android:text="Update"></Button>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btndelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:padding="15dp"
+            android:text="Delete"></Button>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         </RelativeLayout>
     </LinearLayout>
